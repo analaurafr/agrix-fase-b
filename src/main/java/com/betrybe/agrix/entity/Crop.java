@@ -30,8 +30,8 @@ public class Crop {
   @JoinColumn(name = "planted_date")
   private LocalDate plantedDate;
 
-  @JoinColumn(name = "haverst_date")
-  private LocalDate haverstDate;
+  @JoinColumn(name = "harvest_date")
+  private LocalDate harvestDate;
 
   public Crop() {
   }
@@ -85,10 +85,10 @@ public class Crop {
   }
 
   public LocalDate getHaverstDate() {
-    return haverstDate;
+    return harvestDate;
   }
 
-  public void setHaverstDate(LocalDate haverstDate) {
-    this.haverstDate = haverstDate;
+  public void setHarvestDate(LocalDate harverstDate) {
+    this.harvestDate = harverstDate;
   }
 }

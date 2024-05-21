@@ -10,10 +10,10 @@ public record CropCreationDto(
     String name,
     Double plantedArea,
     LocalDate plantedDate,
-    LocalDate haverstDate
+    LocalDate harvestDate
 ) {
   public Crop toEntity() {
 
-    return new Crop(name, plantedArea, plantedDate, haverstDate);
+    return new Crop(name, plantedArea, plantedDate, harvestDate);
   }
 }

@@ -39,7 +39,7 @@ public class CropService {
    * @throws FarmNotFoundException the farm not found exception
    */
   public Crop createCrop(Long farmId, Crop crop) throws FarmNotFoundException {
-    Farm farm = farmService.findFarmById(farmId);
+    Farm farm = farmService.findById(farmId);
 
     crop.setFarm(farm);
 

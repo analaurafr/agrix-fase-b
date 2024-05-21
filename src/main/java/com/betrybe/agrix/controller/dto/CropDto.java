@@ -12,7 +12,7 @@ public record CropDto(
     Double plantedArea,
     Long farmId,
     LocalDate plantedDate,
-    LocalDate haverstDate
+    LocalDate harvestDate
 ) {
 
   /**

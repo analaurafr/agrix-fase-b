@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class FarmService {
+
   private final FarmRepository farmRepository;
 
   /**
@@ -24,33 +25,15 @@ public class FarmService {
     this.farmRepository = farmRepository;
   }
 
-  /**
-   * Find by id farm.
-   *
-   * @param farmId the id
-   * @return the farm
-   * @throws FarmNotFoundException the farm not found exception
-   */
-  public Farm findFarmById(Long farmId) throws FarmNotFoundException {
-    return farmRepository.findById(farmId).orElseThrow(FarmNotFoundException::new);
+  public Farm createFarm(Farm farm) {
+    return farmRepository.save(farm);
   }
 
-  /**
-   * Find all list.
-   *
-   * @return the list
-   */
   public List<Farm> findAllFarms() {
     return farmRepository.findAll();
   }
 
-  /**
-   * Create farm.
-   *
-   * @param farm the farm
-   * @return the farm
-   */
-  public Farm createFarm(Farm farm) {
-    return farmRepository.save(farm);
+  public Farm findById(Long id) throws FarmNotFoundException {
+    return farmRepository.findById(id).orElseThrow(FarmNotFoundException::new);
   }
 }

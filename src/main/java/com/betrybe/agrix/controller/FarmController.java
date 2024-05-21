@@ -65,7 +65,7 @@ public class FarmController {
    */
   @GetMapping(value = "/{id}")
   public FarmDto getFarmById(@PathVariable Long id) throws FarmNotFoundException {
-    return FarmDto.fromEntity(farmService.findFarmById(id));
+    return FarmDto.fromEntity(farmService.findById(id));
   }
 
   /**
@@ -82,6 +82,7 @@ public class FarmController {
     return CropDto.fromEntity(cropService.createCrop(farmId, cropCreationDto.toEntity()));
   }
 
+
   /**
    * Gets all crops by farm id.
    *
@@ -91,7 +92,7 @@ public class FarmController {
    */
   @GetMapping(value = "/{farmId}/crops")
   public List<CropDto> getAllCropsByFarmId(@PathVariable Long farmId) throws FarmNotFoundException {
-    List<Crop> farm = farmService.findFarmById(farmId).getCrops();
+    List<Crop> farm = farmService.findById(farmId).getCrops();
 
     return farm.stream().map(CropDto::fromEntity).toList();
   }

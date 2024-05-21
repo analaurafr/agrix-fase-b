@@ -66,6 +66,4 @@ public class CropController {
     return cropService.findByHarvestDateBetween(start, end)
         .stream().map(CropDto::fromEntity).toList();
   }
-
-
 }
