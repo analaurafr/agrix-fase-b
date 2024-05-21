@@ -36,12 +36,19 @@ public class Crop {
   public Crop() {
   }
 
-  public Crop(String name, Double plantedArea) {
+  /**
+   * Instantiates a new Crop.
+   *
+   * @param name        the name
+   * @param plantedArea the planted area
+   * @param plantedDate the planted date
+   * @param harvestDate the harvest date
+   */
+  public Crop(String name, Double plantedArea, LocalDate plantedDate, LocalDate harvestDate) {
     this.name = name;
     this.plantedArea = plantedArea;
-  }
-
-  public Crop(String name, Double plantedArea, LocalDate plantedDate, LocalDate haverstDate) {
+    this.plantedDate = plantedDate;
+    this.harvestDate = harvestDate;
   }
 
   public Long getId() {
